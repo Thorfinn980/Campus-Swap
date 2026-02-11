@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import "./Navbar.css";
 
 export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
@@ -28,7 +27,7 @@ export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
         {/* Actions */}
         <div className="navbar__actions">
           <button className="navbar__sell-btn" onClick={onSellClick}>
-            + Sell Item
+            Sell Item
           </button>
 
           <div className="navbar__user">
@@ -40,12 +39,8 @@ export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
               <div className="navbar__avatar">👤</div>
             </button>
 
-            <AnimatePresence>
               {isMenuOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                <div
                   className="navbar__dropdown"
                 >
                   <div className="navbar__dropdown-section">
@@ -77,9 +72,8 @@ export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
                       💬 Messages
                     </button>
                   </div>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
           </div>
         </div>
       </div>

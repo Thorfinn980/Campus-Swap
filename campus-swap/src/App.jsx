@@ -45,6 +45,10 @@ function App() {
       <Navbar
         onNavigate={setActivePage}
         onHomeClick={() => setActivePage("home")}
+        onSearch={setSearchQuery}  
+        
+        // Pass search query to Navbar
+        // Note: Database hookup
       />
 
       {/* HOME PAGE */}

@@ -152,8 +152,8 @@ body {
 
 .listings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;  /* This reduce the gap btw */
 }
 
 .listing-card {
@@ -165,6 +165,7 @@ body {
   border: 2px solid transparent;
   animation: fadeInUp 0.5s ease-out;
   animation-fill-mode: both;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
 @keyframes fadeInUp {
@@ -313,3 +314,4 @@ nav,
 nav * {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
 }
+

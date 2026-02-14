@@ -2,16 +2,13 @@
   position: relative;
   overflow: hidden;
   background-color: white;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
 }
 
 .hero__container {
   margin: 0 auto;
   max-width: 80rem;
-  padding: 80px 20px;
   width: 100%;
+  padding: 100px 20px;   /* main height control */
 }
 
 .hero__content {
@@ -21,11 +18,11 @@
 }
 
 .hero__title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.025em;
   color: #111827;
-  margin: 0 0 24px 0;
+  margin: 0 0 10px 0;   /* tightened */
   line-height: 1.1;
 }
 
@@ -35,12 +32,12 @@
 
 .hero__title-line--accent {
   color: #2563eb;
-  margin-top: 8px;
+  margin-top: 0;        /* removes hidden extra space */
 }
 
 .hero__subtitle {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.5;
   color: #6b7280;
   margin: 0;
   max-width: 600px;

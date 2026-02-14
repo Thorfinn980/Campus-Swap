@@ -9,7 +9,7 @@ export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
       <div className="navbar__container">
         {/* Logo */}
         <div className="navbar__logo" onClick={onHomeClick}>
-          <span className="navbar__logo-text">CampusSwap</span>
+          <span className="navbar__logo-text">Campus Swap</span>
         </div>
 
         {/* Search */}

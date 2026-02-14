@@ -30,31 +30,32 @@ export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
             Sell Item
           </button>
 
-          <div className="navbar__user">
+          <div className="navbar_user">
             <button
-              className="navbar__user-btn"
+              className="navbar_user-btn"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <span className="navbar__user-name">Account</span>
-              <div className="navbar__avatar">👤</div>
+              <span className="navbar_user-name">Account</span>
+              <div className="navbar_avatar">👤</div>
             </button>
 
               {isMenuOpen && (
                 <div
-                  className="navbar__dropdown"
+                  className="navbar_dropdown"
                 >
-                  <div className="navbar__dropdown-section">
+                  <div className="navbar_dropdown-section">
                     <button
-                      className="navbar__dropdown-item"
+                      className="navbar_dropdown-item"
                       onClick={() => {
-                        onNavigate && onNavigate("my-listings");
+                        onNavigate && onNavigate("myListings");
                         setIsMenuOpen(false);
                       }}
                     >
                       📋 My Listings
                     </button>
+                    
                     <button
-                      className="navbar__dropdown-item"
+                      className="navbar_dropdown-item"
                       onClick={() => {
                         onNavigate && onNavigate("orders");
                         setIsMenuOpen(false);
@@ -63,7 +64,7 @@ export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
                       🛒 My Orders
                     </button>
                     <button
-                      className="navbar__dropdown-item"
+                      className="navbar_dropdown-item"
                       onClick={() => {
                         onNavigate && onNavigate("messages");
                         setIsMenuOpen(false);

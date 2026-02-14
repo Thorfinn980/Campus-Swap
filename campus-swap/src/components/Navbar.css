@@ -35,9 +35,20 @@
 }
 
 .navbar_search-wrapper {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   max-width: 480px;
+}
+
+.navbar_search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .navbar_search-input {
@@ -175,4 +186,17 @@
   .navbar_user-name {
     display: none;
   }
+}
+
+/*===== Global Font =====*/
+.navbar,
+.navbar_logo,
+.navbar_logo-text {
+  font-family: 'Sora', 'DM Sans', Arial, sans-serif;
+}
+
+.navbar_logo,
+.navbar_logo-text {
+  font-size: 2rem;     
+  font-weight: 800; 
 }

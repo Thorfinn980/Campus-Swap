@@ -27,7 +27,7 @@ export function MyListings({ currentUser, products, deleteProduct }) {
 
         <div className="my_listings_grid">
           {myListings.map((product) => (
-            <div key={product.id} className="my-listings__card-wrap">
+            <div key={product.id} className="my_listings_card-wrap">
               {/* productCard here*/}
               <div
                 style={{

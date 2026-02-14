@@ -35,7 +35,7 @@
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
-.my-listings__card-wrap {
+.my_listings_card-wrap {
   position: relative;
 }
 

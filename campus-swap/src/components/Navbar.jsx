@@ -6,18 +6,18 @@ export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
 
   return (
     <nav className="navbar">
-      <div className="navbar__container">
+      <div className="navbar_container">
         {/* Logo */}
-        <div className="navbar__logo" onClick={onHomeClick}>
-          <span className="navbar__logo-text">Campus Swap</span>
+        <div className="navbar_logo" onClick={onHomeClick}>
+          <span className="navbar__ogo-text">Campus Swap</span>
         </div>
 
         {/* Search */}
-        <div className="navbar__search">
-          <div className="navbar__search-wrapper">
+        <div className="navbar_search">
+          <div className="navbar_search-wrapper">
             <input
               type="text"
-              className="navbar__search-input"
+              className="navbar_search-input"
               placeholder="Search textbooks, electronics, furniture..."
               onChange={(e) => onSearch && onSearch(e.target.value)}
             />
@@ -25,8 +25,8 @@ export function Navbar({ onSellClick, onHomeClick, onSearch, onNavigate }) {
         </div>
 
         {/* Actions */}
-        <div className="navbar__actions">
-          <button className="navbar__sell-btn" onClick={onSellClick}>
+        <div className="navbar_actions">
+          <button className="navbar_sell-btn" onClick={onSellClick}>
             Sell Item
           </button>
 

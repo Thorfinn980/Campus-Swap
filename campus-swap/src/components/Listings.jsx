@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { MapPin, Clock, Star } from 'lucide-react'
+import ItemDetailModal from './ItemDetailModal'
 
 // Sample listings data
 const listingsData = [
@@ -50,6 +52,8 @@ const listingsData = [
 ]
 
 function Listings({ category, searchQuery, priceRange, sortBy }) {
+  const [selectedItem, setSelectedItem] = useState(null)
+
   // Filter listings
   let filteredListings = listingsData.filter(listing => {
     const matchesCategory = category === 'all' || listing.category === category
@@ -75,60 +79,74 @@ function Listings({ category, searchQuery, priceRange, sortBy }) {
   })
 
   return (
-    <section className="listings-section">
-      {/* Header */}
-      <div className="section-header">
-        <h2 className="section-title">Recent Listings</h2>
-        <span className="results-count">{filteredListings.length} results</span>
-      </div>
+    <>
+      <section className="listings-section">
+        {/* Header */}
+        <div className="section-header">
+          <h2 className="section-title">Recent Listings</h2>
+          <span className="results-count">{filteredListings.length} results</span>
+        </div>
 
-      {/* Grid */}
-      <div className="listings-grid">
-        {filteredListings.map(listing => (
-          <div key={listing.id} className="listing-card">
-            {/* Image */}
-            <div className="listing-image-container">
-              <img src={listing.image} alt={listing.title} className="listing-image" />
-              <span className="condition-badge">{listing.condition}</span>
-            </div>
-
-            {/* Content */}
-            <div className="listing-content">
-              <h3 className="listing-title">{listing.title}</h3>
-              <div className="listing-price">${listing.price}</div>
-
-              {/* Seller Info */}
-              <div className="listing-meta">
-                <div className="seller-info">
-                  <img 
-                    src={listing.seller.avatar} 
-                    alt={listing.seller.name} 
-                    className="seller-avatar"
-                  />
-                  <span className="seller-name">{listing.seller.name}</span>
-                </div>
-                <div className="rating">
-                  <Star size={16} fill="currentColor" />
-                  {listing.seller.rating}
-                </div>
+        {/* Grid */}
+        <div className="listings-grid">
+          {filteredListings.map(listing => (
+            <div 
+              key={listing.id} 
+              className="listing-card"
+              onClick={() => setSelectedItem(listing)}
+            >
+              {/* Image */}
+              <div className="listing-image-container">
+                <img src={listing.image} alt={listing.title} className="listing-image" />
+                <span className="condition-badge">{listing.condition}</span>
               </div>
 
-              {/* Footer */}
-              <div className="listing-footer">
-                <div className="location">
-                  <MapPin size={14} />
-                  {listing.location}
+              {/* Content */}
+              <div className="listing-content">
+                <h3 className="listing-title">{listing.title}</h3>
+                <div className="listing-price">${listing.price}</div>
+
+                {/* Seller Info */}
+                <div className="listing-meta">
+                  <div className="seller-info">
+                    <img 
+                      src={listing.seller.avatar} 
+                      alt={listing.seller.name} 
+                      className="seller-avatar"
+                    />
+                    <span className="seller-name">{listing.seller.name}</span>
+                  </div>
+                  <div className="rating">
+                    <Star size={16} fill="currentColor" />
+                    {listing.seller.rating}
+                  </div>
                 </div>
-                <div className="time">
-                  <Clock size={14} />
-                  {listing.timeAgo}
+
+                {/* Footer */}
+                <div className="listing-footer">
+                  <div className="location">
+                    <MapPin size={14} />
+                    {listing.location}
+                  </div>
+                  <div className="time">
+                    <Clock size={14} />
+                    {listing.timeAgo}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+
+      {/* Modal */}
+      {selectedItem && (
+        <ItemDetailModal 
+          item={selectedItem} 
+          onClose={() => setSelectedItem(null)} 
+        />
+      )}
+    </>
   )
 }
 

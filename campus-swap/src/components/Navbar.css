@@ -19,7 +19,7 @@
   gap: 16px;
 }
 
-.navbar_logo-text {
+.navbar_logo_text {
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -34,13 +34,13 @@
   padding: 0 24px;
 }
 
-.navbar_search-wrapper {
+.navbar_search_wrapper {
   position: relative;
   width: 100%;
   max-width: 480px;
 }
 
-.navbar_search-input {
+.navbar_search_input {
   width: 100%;
   padding: 8px 16px 8px 36px;
   border: 1px solid #d1d5db;
@@ -53,13 +53,13 @@
   box-sizing: border-box;
 }
 
-.navbar_search-input:focus {
+.navbar_search_input:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
   background-color: white;
 }
 
-.navbar_search-input::placeholder {
+.navbar_search_input::placeholder {
   color: #9ca3af;
 }
 
@@ -70,7 +70,7 @@
   flex-shrink: 0;
 }
 
-.navbar_sell-btn {
+.navbar_sell_btn {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -85,7 +85,7 @@
   transition: background-color 0.2s;
 }
 
-.navbar_sell-btn:hover {
+.navbar_sell_btn:hover {
   background-color: #1d4ed8;
 }
 
@@ -94,7 +94,7 @@
   position: relative;
 }
 
-.navbar_user-btn {
+.navbar_user_btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -106,12 +106,12 @@
   transition: background-color 0.2s, border-color 0.2s;
 }
 
-.navbar_user-btn:hover {
+.navbar_user_btn:hover {
   background-color: #f3f4f6;
   border-color: #e5e7eb;
 }
 
-.navbar_user-name {
+.navbar_user_name {
   font-size: 0.875rem;
   font-weight: 500;
   color: #111827;
@@ -143,11 +143,11 @@
   z-index: 100;
 }
 
-.navbar_dropdown-section {
+.navbar_dropdown_section {
   padding: 4px 0;
 }
 
-.navbar_dropdown-item {
+.navbar_dropdown_item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -162,7 +162,7 @@
   transition: background-color 0.15s;
 }
 
-.navbar_dropdown-item:hover {
+.navbar_dropdown_item:hover {
   background-color: #f3f4f6;
 }
 
@@ -172,7 +172,7 @@
     display: none;
   }
 
-  .navbar_user-name {
+  .navbar_user_name {
     display: none;
   }
 }

@@ -6,6 +6,7 @@ import Categories from "./components/Categories";
 import Filters from "./components/Filters";       
 import Footer from "./components/Footer";
 import "./App.css";
+import Listings from "./components/Listings";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -63,6 +64,14 @@ function App() {
             onPriceChange={setPriceRange}
             sortBy={sortBy}
             onSortChange={setSortBy}
+          />
+
+          {/* Listings */}
+          <Listings
+            category={activeCategory}
+            searchQuery={searchQuery}
+            priceRange={priceRange}
+            sortBy={sortBy}
           />
         </>
       )}

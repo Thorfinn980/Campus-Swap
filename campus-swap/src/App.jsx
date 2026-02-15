@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Hero } from "./components/hero";
+import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { MyListings } from "./components/myListings";
 import Categories from "./components/Categories"; 

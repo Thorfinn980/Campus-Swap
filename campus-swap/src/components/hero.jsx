@@ -13,8 +13,7 @@ export function Hero() {
           </h1>
 
           <p className="hero__subtitle">
-            The trusted marketplace for university students. Find cheap textbooks,
-            furniture, and electronics from people you know.
+            The trusted marketplace for university students.
           </p>
         </div>
       </div>

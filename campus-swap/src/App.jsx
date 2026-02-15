@@ -2,12 +2,21 @@ import { useState } from "react";
 import { Hero } from "./components/hero";
 import { Navbar } from "./components/Navbar";
 import { MyListings } from "./components/myListings";
+import Categories from "./components/Categories"; 
+import Filters from "./components/Filters";       
+import Footer from "./components/Footer";
 import "./App.css";
+import Listings from "./components/Listings";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
+  
+  // Add these state variables ↓
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [priceRange, setPriceRange] = useState({ min: '', max: '' });
+  const [sortBy, setSortBy] = useState('newest');
 
-  //  demo - replace with real data later
   const [currentUser] = useState({ id: 1, name: "Account" });
   const [products, setProducts] = useState([
     {
@@ -36,10 +45,43 @@ function App() {
       <Navbar
         onNavigate={setActivePage}
         onHomeClick={() => setActivePage("home")}
+        onSearch={setSearchQuery}  
+        
+        // Pass search query to Navbar
+        // Note: Database hookup
       />
 
-      {activePage === "home" && <Hero />}
+      {/* HOME PAGE */}
+      {activePage === "home" && (
+        <>
+          <Hero />
+          
+          {/* Categories */}
+          <Categories 
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+          />
+          
+          {/* Filters */}
+          <Filters 
+            priceRange={priceRange}
+            onPriceChange={setPriceRange}
+            sortBy={sortBy}
+            onSortChange={setSortBy}
+          />
+
+          {/* Listings */}
+          <Listings
+            category={activeCategory}
+            searchQuery={searchQuery}
+            priceRange={priceRange}
+            sortBy={sortBy}
+          />
+        </>
+      )}
       
+      {/* MY LISTINGS PAGE - 
+      Simon, if you're reading this make sure it works again*/}
       {activePage === "myListings" && (
         <MyListings
           currentUser={currentUser}
@@ -47,6 +89,8 @@ function App() {
           deleteProduct={deleteProduct}
         />
       )}
+
+      <Footer />
     </div>
   );
 }

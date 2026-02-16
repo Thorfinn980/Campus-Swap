@@ -16,7 +16,6 @@ function ItemDetailModal({ item, onClose }) {
           {/* Left Side - Image */}
           <div className="modal-image-section">
             <img src={item.image} alt={item.title} className="modal-image" />
-            <span className="modal-condition-badge">{item.condition}</span>
           </div>
 
           {/* Right Side - Details */}

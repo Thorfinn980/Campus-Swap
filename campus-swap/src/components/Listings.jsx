@@ -48,6 +48,36 @@ const listingsData = [
     location: 'State University',
     timeAgo: '2d ago',
     category: 'electronics'
+  },
+  {
+    id: 4,
+    title: 'Wooden Desk',
+    price: 120,
+    image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=800&h=600&fit=crop',
+    condition: 'Good',
+    seller: {
+      name: 'Emily Clark',
+      avatar: 'https://i.pravatar.cc/150?img=45',
+      rating: 4.2
+    },
+    location: 'State University',
+    timeAgo: '1w ago',
+    category: 'furniture'
+  },
+  {
+    id: 5,
+    title: 'Organic Chemistry Textbook',
+    price: 60,
+    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=600&fit=crop',
+    condition: 'Like New',
+    seller: {
+      name: 'David Lee',
+      avatar: 'https://i.pravatar.cc/150?img=52',
+      rating: 4.7
+    },
+    location: 'State University',
+    timeAgo: '3d ago',
+    category: 'textbooks'
   }
 ]
 
